@@ -8,7 +8,7 @@ if (-Not (Test-Path -Path ".\pic_script\$outdir")) {
 }
 
 # Loop over each line of the input file
-foreach($line in Get-Content .\list.txt) {
+foreach($line in Get-Content .\examplelist.txt) {
   # We expect an image URL, so chop off the last bit to use as a filename
   $pic=$line.Split("{/}")[-1]
   # Equivalent of wget, snatch the image and save it as the name we just split off
