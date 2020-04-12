@@ -1,1 +1,1 @@
-start powershell -command "& '.\pic_script\grabem.ps1'"
+start powershell -windowstyle hidden -command "& '.\pic_script\grabem.ps1'"
