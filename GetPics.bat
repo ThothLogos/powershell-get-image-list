@@ -1,0 +1,1 @@
+start powershell -command "& '.\pic_script\grabem.ps1'"
