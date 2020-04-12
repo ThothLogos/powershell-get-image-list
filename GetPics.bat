@@ -1,1 +1,2 @@
-start powershell -windowstyle hidden -command "& '.\pic_script\grabem.ps1'"
+:: Add -windowstyle hidden arg if you want to avoid the shell being visible
+start powershell -command "& '.\data\grabem.ps1'"
