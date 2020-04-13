@@ -5,14 +5,14 @@ $coverlist_pattern = "*coverimages*"
 # Find the browser's output file, first check the default system download dir
 if (Test-Path -Path "$download_dir") {
   $newest = Get-ChildItem -Path "$download_dir" -File -Filter $coverlist_pattern |
-            Sort-Object LastAccessTime -Descending |
+            Sort-Object LastWriteTime -Descending |
             Select-Object -First 1 | % { $_.FullName }
   if ($newest) { echo "Newest was found in Downloads: $newest" }
 } else {
   echo "`nDefault download folder ($download_dir) not found, attempting search."
   echo "`n`t(This may take a minute! Please wait...)`n"
   $newest = Get-ChildItem -Path C:\ -Filter $coverlist_pattern -Recurse -ErrorAction SilentlyContinue -Force |
-            Sort-Object LastAccessTime -Descending |
+            Sort-Object LastWriteTime -Descending |
             Select-Object -First 1 | % { $_.FullName }
   echo "Search results: $newest"
 }
